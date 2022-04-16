@@ -2,10 +2,68 @@
     border: 1px solid #686868;
 }
 
-.mb41{
+.mb41 {
     margin-bottom: 41px;
 }
 
-.mt45{
+.mt45 {
     margin-top: 45px;
+}
+
+.button {
+    &--edit {
+        width: 24px;
+        height: 24px;
+
+        display:inline-block;
+
+        border: 1px white solid;
+
+        background-color: rgba($color: #000000, $alpha: 0);
+
+        background-image: url("/assets/images/pencil--w.svg");
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: center center;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    &--add {
+        width: 150px;
+        height: 50px;
+
+        border: 1px white solid;
+        background-color: rgba($color: #000000, $alpha: 0);
+        color: white;
+
+        background-image: url("/assets/images/add-button-plus.svg");
+        background-repeat: no-repeat;
+        background-size: 20%;
+        background-position: center 65%;
+        cursor: pointer;
+    }
+
+    &--black-full-width{
+        width: 100%;
+        height: 50px;
+        border: 0px;
+        color: white;
+        background-color: black;
+    }
+
+    &--close{
+        width: 32px;
+        height: 32px;
+
+        background-image: url("/assets/images/close--w.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+
+        position: absolute;
+
+        top: -40px;
+        right: -40px;
+    }
 }

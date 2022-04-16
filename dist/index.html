@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/style.min.css">
@@ -14,9 +15,52 @@
     
     <title>Hello</title>
 </head>
+
 <body>
 
     <div class="page">
+        <!-- Popup -->
+        <div class="popup">
+            <div class="popup__container popup__container--edit-profile">
+            
+                <p class="typography__title typography__bold">Редактировать профиль</p>
+            
+                <div class="popup__inputs">
+            
+                    <div class="popup__input-container">
+                        <input type="text" name="name" id="" value="Жак-Ив Кусто" class="popup__input">
+                    </div>
+            
+                    <div class="popup__input-container">
+                        <input type="text" name="description" id="" value="Исследователь океана" class="popup__input">
+                    </div>
+            
+                </div>
+            
+                <button class="button--black-full-width typography__body1">Сохранить</button>
+            
+                <div class="button--close" name="toggle-popup-edit-profile"></div>
+            
+            </div>
+            
+            
+            
+            <div class="popup__container popup__container--add-photo">
+            
+                <p class="typography__title typography__bold">Загрузить фото</p>
+            
+                <div class="popup__inputs">
+            
+                    ФОТО
+            
+                </div>
+            
+                <button class="button--black-full-width typography__body1">Сохранить</button>
+            
+                <div class="button--close" name="toggle-popup-add-photo"></div>
+            
+            </div>        </div>
+
         <!-- Header -->
         <header class="header">
         
@@ -33,12 +77,13 @@
                         <div class="avatar" style="background-image: url(/assets/images/avatars/avatar.jpg);"></div>
         
                         <div class="header__name-interface">
-                            <p class="header__name">Жак-Ив Кусто <button class="edit-button"></button class="edit-button"></p>
-                            <p class="header__description">Исследователь океана</p>
+                            <p class="header__name">Жак-Ив Кусто 
+                                <button class="button--edit" name="toggle-popup-edit-profile"></button></p>
+                            <p class="typography__body1">Исследователь океана</p>
                         </div>
                     </div>
         
-                    <button class="add-button"></button>
+                    <div class="button--add" name="toggle-popup-add-photo"></div>
                 </div>
         
             </div>
@@ -49,14 +94,57 @@
             <div class="container">
                 
                 
+                <div class="card-grid">
+                
+                    <div class="card">
+                        <div class="card__image" style="background-image:url(/assets/images/photos/karachaevsk.png)"></div> <div class="card__text">Карачаевск <button class="card__like-button"></button></div>
+                    </div>
+                
+                    <div class="card">
+                        <div class="card__image" style="background-image:url(/assets/images/photos/verticalPhotoCheck.jpg)"></div> <div class="card__text">Гора Эльбрус <button class="card__like-button"></button></div>
+                    </div>
+                
+                    <div class="card">
+                        <div class="card__image" style="background-image:url(/assets/images/photos/karachaevsk.png)"></div> <div class="card__text">Домбай <button class="card__like-button"></button></div>
+                    </div>
+                
+                    <div class="card">
+                        <div class="card__image" style="background-image:url(/assets/images/photos/karachaevsk.png)"></div> <div class="card__text">Карачаевск <button class="card__like-button"></button></div>
+                    </div>
+                
+                    <div class="card">
+                        <div class="card__image" style="background-image:url(/assets/images/photos/karachaevsk.png)"></div> <div class="card__text">Эльбрус <button class="card__like-button"></button></div>
+                    </div>
+                
+                    <div class="card">
+                        <div class="card__image" style="background-image:url(/assets/images/photos/karachaevsk.png)"></div> <div class="card__text">Карачаевск</div>
+                    </div>
+                
+                </div>
+                
                 
             </div>
         </main>
-        
+
+
+
+        <!-- Footer -->
+        <div class="container">
+            <footer>
+            
+                <div class="footer__text">© 2020 Mesto Russia</div>
+            
+            
+            
+            </footer>        </div>
+
+
     </div>
+
 
 
     <!-- JS -->
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>

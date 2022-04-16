@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background-color: #181818;
+    background-color: #000;
 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1.4rem;
@@ -25,9 +25,11 @@ body {
 @import "blocks/header";
 @import "blocks/sidebar";
 @import "blocks/main";
+@import "blocks/footer";
 @import "blocks/container";
 @import "blocks/typography";
 @import "blocks/helper";
+@import "blocks/popup";
 
 
 

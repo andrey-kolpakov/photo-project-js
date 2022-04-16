@@ -382,14 +382,68 @@ body {
     overflow: hidden;
 }
 
-.header {
-    width: calc(100% - 300px);
-    height: 30px;
-    background-color: #444;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1000;
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 45px;
+}
+
+.header__logo {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.header__menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.header__menu-left {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar {
+    border-radius: 50%;
+    background-color: aliceblue;
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+}
+
+.header__name {
+    margin-bottom: 10px;
+}
+
+.edit-button {
+    width: 24px;
+    height: 24px;
+    border: 1px white solid;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("/assets/images/pencil--w.svg");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center center;
+    margin-left: 10px;
+}
+
+.add-button {
+    width: 150px;
+    height: 50px;
+    border: 1px white solid;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    background-image: url("/assets/images/add-button-plus.svg");
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: center 60%;
 }
 
 .sidebar {
@@ -402,14 +456,37 @@ body {
     z-index: 1000;
 }
 
-.main {
-    padding-top: 10rem;
-    padding-left: 300px;
+.container {
+    max-width: 880px;
+    margin: 0 auto;
 }
 
-.container {
-    max-width: 70rem;
-    margin: 0 auto;
-    padding-left: 5rem;
-    padding-right: 5rem;
+.typography__h1 {
+    font-weight: 400;
+    font-size: 33px;
+}
+
+.typography__sup {
+    font-size: 10px;
+}
+
+.header__name {
+    font-size: 42px;
+    font-weight: 400;
+}
+
+.header__description {
+    font-size: 18px;
+}
+
+.helper__hr {
+    border: 1px solid #686868;
+}
+
+.mb41 {
+    margin-bottom: 41px;
+}
+
+.mt45 {
+    margin-top: 45px;
 }

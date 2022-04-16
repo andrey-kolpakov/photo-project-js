@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     {{> head }}
 </head>
+
 <body>
 
     <div class="page">
+        <!-- Popup -->
+        <div class="popup">
+            {{> popup }}
+        </div>
+
         <!-- Header -->
         {{> header }}
 
@@ -15,11 +22,21 @@
                 {{> body }}
             </div>
         </main>
-        
+
+
+
+        <!-- Footer -->
+        <div class="container">
+            {{> footer }}
+        </div>
+
+
     </div>
+
 
 
     <!-- JS -->
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>
