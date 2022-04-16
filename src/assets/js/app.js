@@ -24,4 +24,6 @@ addPhoto.forEach(element => {
         popup.classList.toggle('popup--popup_opened')
         toggleNewPopupContainer('.popup__container--add-photo')
     })
-})
+}) 
+
+//asdasdasd
