@@ -1,4 +1,4 @@
-.popup {
+.popup-group {
     width: 100%;
     height: 100%;
     background-color: rgba($color: #000000, $alpha: 0.8);
@@ -15,7 +15,7 @@
     }
 }
 
-.popup__container{
+.popup__inner{
     border-radius: 10px;
     background-color: white;
     color: black;
@@ -25,7 +25,15 @@
     padding: 25px;
 }
 
-.popup__container--edit-profile{
+.popup__inner--edit-profile{
+    display: none;
+
+    &--visible{
+        display: block;
+    }
+}
+
+.popup__inner--add-photo{
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -35,28 +43,13 @@
     }
 }
 
-.popup__container--add-photo{
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
 
-    &--visible{
-        display: flex;
-    }
-}
-
-.popup__inputs{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 35px;
-}
 
 .popup__input{
     border: 0px;
 }
 
-.popup__input-container{
+.popup__form-input{
     position: relative;
 
     &::before{
@@ -69,3 +62,17 @@
     }
 }
 
+.popup__input-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.popup__form-edit-profile{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+}

@@ -1,28 +1,30 @@
-<div class="popup__container popup__container--edit-profile">
+<div class="popup__inner popup__inner--edit-profile">
 
-    <p class="typography__title typography__bold">Редактировать профиль</p>
+    <form action="" class="popup__form-edit-profile">
+        <p class="typography__title typography__bold">Редактировать профиль</p>
 
-    <div class="popup__inputs">
+        <div class="popup__input-group">
 
-        <div class="popup__input-container">
-            <input type="text" name="name" id="" value="Жак-Ив Кусто" class="popup__input">
+            <div class="popup__form-input">
+                <input type="text" id="input-name" value="" class="popup__input">
+            </div>
+
+            <div class="popup__form-input">
+                <input type="text" id="input-description" value="Исследователь океана" class="popup__input">
+            </div>
+
         </div>
 
-        <div class="popup__input-container">
-            <input type="text" name="description" id="" value="Исследователь океана" class="popup__input">
-        </div>
+        <button class="button--black-full-width typography__body1">Сохранить</button>
+    </form>
 
-    </div>
-
-    <button class="button--black-full-width typography__body1">Сохранить</button>
-
-    <div class="button--close" name="toggle-popup-edit-profile"></div>
+    <div class="button button--close" name="toggle-popup-edit-profile"></div>
 
 </div>
 
 
 
-<div class="popup__container popup__container--add-photo">
+<div class="popup__inner popup__inner--add-photo">
 
     <p class="typography__title typography__bold">Загрузить фото</p>
 
@@ -34,6 +36,6 @@
 
     <button class="button--black-full-width typography__body1">Сохранить</button>
 
-    <div class="button--close" name="toggle-popup-add-photo"></div>
+    <div class="button button--close" name="toggle-popup-add-photo"></div>
 
 </div>

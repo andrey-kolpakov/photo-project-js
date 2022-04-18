@@ -1,0 +1,157 @@
+.row {
+    display: flex;
+
+    width: 100%;
+
+    flex-wrap: wrap;
+
+    &--space-between {
+        justify-content: space-between;
+    }
+
+    &--start {
+        justify-content: flex-start;
+    }
+
+    &--end {
+        justify-content: flex-end;
+    }
+
+    &--center {
+        justify-content: center;
+    }
+}
+
+.row>*{
+    margin: 0.5% 0.5%;
+}
+.row>*:first-child{
+    margin-left: 0px;
+}
+.row>*:last-child{
+    margin-right: 0px;
+}
+
+.col {
+    box-sizing: border-box !important;
+
+    &-12 {
+        width: 100%;
+    }
+
+    &-11 {
+        width: 91.66667%;
+    }
+
+    &-10 {
+        width: 83.33333%;
+    }
+
+    &-9 {
+        width: 75%;
+    }
+
+    &-8 {
+        width: 66.66667%;
+    }
+
+    &-7 {
+        width: 58.33333%;
+    }
+
+    &-6 {
+        width: 50%;
+    }
+
+    &-5 {
+        width: 41.66667%;
+    }
+
+    &-4 {
+        width: 33.33333%;
+    }
+
+    &-3 {
+        width: 25%;
+    }
+
+    &-2 {
+        width: 16.66667%;
+    }
+
+    &-1 {
+        width: 8.33333%;
+    }
+
+    &-lg-12{
+        @include breakpoint(992px){
+            width: 100%;
+        }
+    }
+
+    &-lg-11 {
+        @include breakpoint(992px){
+        width: 91.66667%;
+        }
+    }
+
+    &-lg-10 {
+        @include breakpoint(992px){
+        width: 83.33333%;
+        }
+    }
+
+    &-lg-9 {
+        @include breakpoint(992px){
+        width: 75%;
+        }
+    }
+
+    &-lg-8 {
+        @include breakpoint(992px){
+        width: 66.66667%;
+        }
+    }
+
+    &-lg-7 {
+        @include breakpoint(992px){
+        width: 58.33333%;
+        }
+    }
+
+    &-lg-6 {
+        @include breakpoint(992px){
+        width: 50%;
+        }
+    }
+
+    &-lg-5 {
+        @include breakpoint(992px){
+        width: 41.66667%;
+        }
+    }
+
+    &-lg-4 {
+        @include breakpoint(992px){
+        width: 33.33333%;
+        }
+    }
+
+    &-lg-3 {
+        @include breakpoint(992px){
+        width: 25%;
+        }
+    }
+
+    &-lg-2 {
+        @include breakpoint(992px){
+        width: 16.66667%;
+        }
+    }
+
+    &-lg-1 {
+        @include breakpoint(992px){
+        width: 8.33333%;
+        }
+    }
+}
