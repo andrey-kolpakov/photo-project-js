@@ -1,4 +1,8 @@
 main {
     margin-bottom: 66px;
+
+    @include breakpoint($mobile){
+        margin-bottom: 48px;
+    }
 }
 

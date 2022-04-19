@@ -3,6 +3,10 @@
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 20px;
+
+    @include breakpoint($mobile){
+        flex-direction: column;
+    }
 }
 
 .card {
@@ -11,13 +15,17 @@
     border-radius: 10px;
 
     width: 100%;
-    height: 600px;
+    height: 500px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     overflow: hidden;
+
+    @include breakpoint(992px){
+        height: 400px;
+    }
 }
 
 .card__image {
@@ -57,4 +65,12 @@
 
     border: none;
     background-color: rgba($color: #000000, $alpha: 0);
+
+    &:hover{
+        filter: opacity(50%);
+    }
+
+    &--active{
+        background-image: url("/assets/images/like--active.svg");
+    }
 }

@@ -20,9 +20,18 @@
     background-color: white;
     color: black;
     position: fixed;
-    width: 430px;
-    height: 330px;
+   
     padding: 25px;
+
+    width: 90%;
+    height: 90%;
+
+    max-width: 430px;
+    max-height: 330px;
+
+    @include breakpoint($mobile){
+        padding: 25px 22px;
+    }
 }
 
 .popup__inner--edit-profile{

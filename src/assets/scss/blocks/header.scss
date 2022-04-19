@@ -1,3 +1,12 @@
+.header{
+    margin-top: 45px;
+    margin-bottom: 41px;
+
+    @include breakpoint($mobile) {
+        margin:31px 0;
+    }
+}
+
 .header__container {
     max-width: 1200px;
     margin: 0 auto;
@@ -6,6 +15,11 @@
 
 .header__logo {
     display: flex;
+    margin-bottom: 41px;
+
+    @include breakpoint($mobile) {
+        margin-bottom: 31px;
+    }
 }
 
 .header__menu {
@@ -13,6 +27,11 @@
 
     align-items: center;
     justify-content: space-between;
+
+    @include breakpoint($mobile) {
+        flex-direction: column;
+        gap: 36px;
+    }
 }
 
 .header__menu-left {
@@ -21,6 +40,10 @@
     align-items: center;
 
     gap: 20px;
+
+    @include breakpoint($mobile) {
+        flex-direction: column;
+    }
 }
 
 .avatar {
@@ -30,9 +53,22 @@
     height: 120px;
 
     background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.header__name{
+.header__name {
     margin-bottom: 10px;
-    
+
+}
+
+.header__name-interface {
+    @include breakpoint($mobile) {
+        text-align: center;
+    }
+}
+.header__name-interface > :first-child {
+    @include breakpoint($mobile) {
+        margin-bottom: 10px;
+    }
 }
