@@ -12,7 +12,7 @@
     font-size: 42px;
     font-weight: 400;
 
-    @include breakpoint($mobile){
+    @include breakpoint($medium){
         font-size: 27px;
     }
 }
@@ -20,7 +20,7 @@
 .header__description{
     font-size: 18px;
 
-    @include breakpoint($mobile){
+    @include breakpoint($medium){
         font-size: 14px;
     }
 }
@@ -32,7 +32,7 @@
 .typography__title{
     font-size: 24px;
 
-    @include breakpoint($mobile){
+    @include breakpoint($medium){
         font-size: 18px;
     }
 } 
@@ -42,7 +42,7 @@
     line-height: 21px;
     font-weight: 100;
 
-    @include breakpoint($mobile){
+    @include breakpoint($medium){
         font-size: 14px;
     }
 }

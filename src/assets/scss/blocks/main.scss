@@ -1,7 +1,7 @@
 main {
     margin-bottom: 66px;
 
-    @include breakpoint($mobile){
+    @include breakpoint($medium){
         margin-bottom: 48px;
     }
 }

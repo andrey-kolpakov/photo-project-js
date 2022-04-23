@@ -2,7 +2,7 @@
     color:#545454;
     margin-bottom: 60px;
 
-    @include breakpoint($mobile){
+    @include breakpoint($medium){
         margin-bottom: 36px;
     }
 }

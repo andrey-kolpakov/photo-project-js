@@ -29,7 +29,7 @@
     max-width: 430px;
     max-height: 330px;
 
-    @include breakpoint($mobile){
+    @include breakpoint($medium){
         padding: 25px 22px;
     }
 }

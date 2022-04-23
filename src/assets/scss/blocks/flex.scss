@@ -5,153 +5,450 @@
 
     flex-wrap: wrap;
 
-    &--space-between {
+    &--justify-content-between {
         justify-content: space-between;
     }
 
-    &--start {
+    &--justify-content-start {
         justify-content: flex-start;
     }
 
-    &--end {
+    &--justify-content-end {
         justify-content: flex-end;
     }
 
-    &--center {
+    &--justify-content-center {
         justify-content: center;
     }
 }
 
-.row>*{
-    margin: 0.5% 0.5%;
+.row > * {
+    box-sizing: border-box;
+    padding: 10px 10px;
 }
 .row>*:first-child{
-    margin-left: 0px;
-}
-.row>*:last-child{
-    margin-right: 0px;
+    box-sizing:border-box;
+    padding-left:0;
 }
 
 .col {
-    box-sizing: border-box !important;
-
     &-12 {
-        width: 100%;
+        width: calc(100%);
     }
 
     &-11 {
-        width: 91.66667%;
+        width: calc((100% / 12) * 11);
     }
 
     &-10 {
-        width: 83.33333%;
+        width: calc((100% / 12) * 10);
     }
 
     &-9 {
-        width: 75%;
+        width: calc((100% / 12) * 9);
     }
 
     &-8 {
-        width: 66.66667%;
+        width: calc((100% / 12) * 8);
     }
 
     &-7 {
-        width: 58.33333%;
+        width: calc((100% / 12) * 7);
     }
 
     &-6 {
-        width: 50%;
+        width: calc((100% / 12) * 6);
     }
 
     &-5 {
-        width: 41.66667%;
+        width: calc((100% / 12) * 5);
     }
 
     &-4 {
-        width: 33.33333%;
+        width: calc((100% / 12) * 4);
     }
 
     &-3 {
-        width: 25%;
+        width: calc((100% / 12) * 3);
     }
 
     &-2 {
-        width: 16.66667%;
+        width: calc((100% / 12) * 2);
     }
 
     &-1 {
-        width: 8.33333%;
+        width: calc((100% / 12) * 1);
     }
 
-    &-lg-12{
-        @include breakpoint(992px){
-            width: 100%;
+    
+
+    &-xlg-12 {
+        @include breakpoint($extra-large) {
+            width: calc((100% / 12) * 12);
+        }
+    }
+
+    &-xlg-11 {
+        @include breakpoint($extra-large) {
+            width: calc((100% / 12) * 11);
+        }
+    }
+
+    &-xlg-10 {
+        @include breakpoint($extra-large) {
+            width: calc((100% / 12) * 10);
+        }
+    }
+
+    &-xlg-9 {
+        @include breakpoint($extra-large) {
+            width: calc((100% / 12) * 9);
+        }
+    }
+
+    &-xlg-8 {
+        @include breakpoint($extra-large) {
+            width: calc((100% / 12) * 8);
+        }
+    }
+
+    &-xlg-7 {
+        @include breakpoint($extra-large) {
+            width: calc((100% / 12) * 7);
+        }
+    }
+
+    &-xlg-6 {
+        @include breakpoint($extra-large) {
+            width: calc((100% / 12) * 6);
+        }
+    }
+
+    &-xlg-5 {
+        @include breakpoint($extra-large) {
+            width: calc((100% / 12) * 5);
+        }
+    }
+
+    &-xlg-4 {
+        @include breakpoint($extra-large) {
+            width: calc((100% / 12) * 4);
+        }
+    }
+
+    &-xlg-3 {
+        @include breakpoint($extra-large) {
+            width: calc((100% / 12) * 3);
+        }
+    }
+
+    &-xlg-2 {
+        @include breakpoint($extra-large) {
+            width: calc((100% / 12) * 2);
+        }
+    }
+
+    &-xlg-1 {
+        @include breakpoint($extra-large) {
+            width: calc((100% / 12) * 1);
+        }
+    }
+
+
+
+
+    &-lg-12 {
+        @include breakpoint($large) {
+            width: calc((100% / 12) * 12);
         }
     }
 
     &-lg-11 {
-        @include breakpoint(992px){
-        width: 91.66667%;
+        @include breakpoint($large) {
+            width: calc((100% / 12) * 11);
         }
     }
 
     &-lg-10 {
-        @include breakpoint(992px){
-        width: 83.33333%;
+        @include breakpoint($large) {
+            width: calc((100% / 12) * 10);
         }
     }
 
     &-lg-9 {
-        @include breakpoint(992px){
-        width: 75%;
+        @include breakpoint($large) {
+            width: calc((100% / 12) * 9);
         }
     }
 
     &-lg-8 {
-        @include breakpoint(992px){
-        width: 66.66667%;
+        @include breakpoint($large) {
+            width: calc((100% / 12) * 8);
         }
     }
 
     &-lg-7 {
-        @include breakpoint(992px){
-        width: 58.33333%;
+        @include breakpoint($large) {
+            width: calc((100% / 12) * 7);
         }
     }
 
     &-lg-6 {
-        @include breakpoint(992px){
-        width: 50%;
+        @include breakpoint($large) {
+            width: calc((100% / 12) * 6);
         }
     }
 
     &-lg-5 {
-        @include breakpoint(992px){
-        width: 41.66667%;
+        @include breakpoint($large) {
+            width: calc((100% / 12) * 5);
         }
     }
 
     &-lg-4 {
-        @include breakpoint(992px){
-        width: 33.33333%;
+        @include breakpoint($large) {
+            width: calc((100% / 12) * 4);
         }
     }
 
     &-lg-3 {
-        @include breakpoint(992px){
-        width: 25%;
+        @include breakpoint($large) {
+            width: calc((100% / 12) * 3);
         }
     }
 
     &-lg-2 {
-        @include breakpoint(992px){
-        width: 16.66667%;
+        @include breakpoint($large) {
+            width: calc((100% / 12) * 2);
         }
     }
 
     &-lg-1 {
-        @include breakpoint(992px){
-        width: 8.33333%;
+        @include breakpoint($large) {
+            width: calc((100% / 12) * 1);
+        }
+    }
+
+
+
+    
+    &-md-12 {
+        @include breakpoint($medium) {
+            width: calc((100% / 12) * 12);
+        }
+    }
+
+    &-md-11 {
+        @include breakpoint($medium) {
+            width: calc((100% / 12) * 11);
+        }
+    }
+
+    &-md-10 {
+        @include breakpoint($medium) {
+            width: calc((100% / 12) * 10);
+        }
+    }
+
+    &-md-9 {
+        @include breakpoint($medium) {
+            width: calc((100% / 12) * 9);
+        }
+    }
+
+    &-md-8 {
+        @include breakpoint($medium) {
+            width: calc((100% / 12) * 8);
+        }
+    }
+
+    &-md-7 {
+        @include breakpoint($medium) {
+            width: calc((100% / 12) * 7);
+        }
+    }
+
+    &-md-6 {
+        @include breakpoint($medium) {
+            width: calc((100% / 12) * 6);
+        }
+    }
+
+    &-md-5 {
+        @include breakpoint($medium) {
+            width: calc((100% / 12) * 5);
+        }
+    }
+
+    &-md-4 {
+        @include breakpoint($medium) {
+            width: calc((100% / 12) * 4);
+        }
+    }
+
+    &-md-3 {
+        @include breakpoint($medium) {
+            width: calc((100% / 12) * 3);
+        }
+    }
+
+    &-md-2 {
+        @include breakpoint($medium) {
+            width: calc((100% / 12) * 2);
+        }
+    }
+
+    &-md-1 {
+        @include breakpoint($medium) {
+            width: calc((100% / 12) * 1);
+        }
+    }
+
+
+
+    &-sm-12 {
+        @include breakpoint($small) {
+            width: calc((100% / 12) * 12);
+        }
+    }
+
+    &-sm-11 {
+        @include breakpoint($small) {
+            width: calc((100% / 12) * 11);
+        }
+    }
+
+    &-sm-10 {
+        @include breakpoint($small) {
+            width: calc((100% / 12) * 10);
+        }
+    }
+
+    &-sm-9 {
+        @include breakpoint($small) {
+            width: calc((100% / 12) * 9);
+        }
+    }
+
+    &-sm-8 {
+        @include breakpoint($small) {
+            width: calc((100% / 12) * 8);
+        }
+    }
+
+    &-sm-7 {
+        @include breakpoint($small) {
+            width: calc((100% / 12) * 7);
+        }
+    }
+
+    &-sm-6 {
+        @include breakpoint($small) {
+            width: calc((100% / 12) * 6);
+        }
+    }
+
+    &-sm-5 {
+        @include breakpoint($small) {
+            width: calc((100% / 12) * 5);
+        }
+    }
+
+    &-sm-4 {
+        @include breakpoint($small) {
+            width: calc((100% / 12) * 4);
+        }
+    }
+
+    &-sm-3 {
+        @include breakpoint($small) {
+            width: calc((100% / 12) * 3);
+        }
+    }
+
+    &-sm-2 {
+        @include breakpoint($small) {
+            width: calc((100% / 12) * 2);
+        }
+    }
+
+    &-sm-1 {
+        @include breakpoint($small) {
+            width: calc((100% / 12) * 1);
+        }
+    }
+
+
+
+    &-xsm-12 {
+        @include breakpoint($extra-small) {
+            width: calc((100% / 12) * 12);
+        }
+    }
+
+    &-xsm-11 {
+        @include breakpoint($extra-small) {
+            width: calc((100% / 12) * 11);
+        }
+    }
+
+    &-xsm-10 {
+        @include breakpoint($extra-small) {
+            width: calc((100% / 12) * 10);
+        }
+    }
+
+    &-xsm-9 {
+        @include breakpoint($extra-small) {
+            width: calc((100% / 12) * 9);
+        }
+    }
+
+    &-xsm-8 {
+        @include breakpoint($extra-small) {
+            width: calc((100% / 12) * 8);
+        }
+    }
+
+    &-xsm-7 {
+        @include breakpoint($extra-small) {
+            width: calc((100% / 12) * 7);
+        }
+    }
+
+    &-xsm-6 {
+        @include breakpoint($extra-small) {
+            width: calc((100% / 12) * 6);
+        }
+    }
+
+    &-xsm-5 {
+        @include breakpoint($extra-small) {
+            width: calc((100% / 12) * 5);
+        }
+    }
+
+    &-xsm-4 {
+        @include breakpoint($extra-small) {
+            width: calc((100% / 12) * 4);
+        }
+    }
+
+    &-xsm-3 {
+        @include breakpoint($extra-small) {
+            width: calc((100% / 12) * 3);
+        }
+    }
+
+    &-xsm-2 {
+        @include breakpoint($extra-small) {
+            width: calc((100% / 12) * 2);
+        }
+    }
+
+    &-xsm-1 {
+        @include breakpoint($extra-small) {
+            width: calc((100% / 12) * 1);
         }
     }
 }

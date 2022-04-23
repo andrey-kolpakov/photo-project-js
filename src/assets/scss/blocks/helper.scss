@@ -3,7 +3,7 @@
     margin-bottom: 40px;
 
     &--fw-mobile-version {
-        @include breakpoint($mobile) {
+        @include breakpoint($medium) {
             position: relative;
             width: 300%;
             left: -300px;
@@ -38,7 +38,7 @@
         background-position: center center;
         margin-left: 10px;
 
-        @include breakpoint($mobile) {
+        @include breakpoint($medium) {
             width: 18px;
             height: 18px;
         }
@@ -61,7 +61,7 @@
         background-size: 20%;
         background-position: center 65%;
 
-        @include breakpoint($mobile) {
+        @include breakpoint($medium) {
             width: 100%;
             background-size: 7.5%;
             background-position: center 60%;
@@ -99,7 +99,7 @@
         top: -40px;
         right: -40px;
 
-        @include breakpoint($mobile) {
+        @include breakpoint($medium) {
             right: 0;
             top: -36px;
 
