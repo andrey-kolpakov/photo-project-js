@@ -26,10 +26,6 @@
     box-sizing: border-box;
     padding: 10px 10px;
 }
-.row>*:first-child{
-    box-sizing:border-box;
-    padding-left:0;
-}
 
 .col {
     &-12 {
