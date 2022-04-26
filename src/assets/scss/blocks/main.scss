@@ -1,5 +1,6 @@
 main {
     margin-bottom: 66px;
+    z-index: 3;
 
     @include breakpoint($medium){
         margin-bottom: 48px;

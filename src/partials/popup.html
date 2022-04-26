@@ -1,16 +1,18 @@
 <div class="popup__inner popup__inner--edit-profile">
 
-    <form action="" class="popup__form-edit-profile">
+    <form action="" class="popup__form-edit-profile" id="form-edit-profile">
         <p class="typography__title typography__extra-bold">Редактировать профиль</p>
 
         <div class="popup__input-group">
 
             <div class="popup__form-input typography__body1">
                 <input type="text" id="input-name" value="" class="popup__input">
+                <div class="popup__input-border"></div>
             </div>
 
             <div class="popup__form-input typography__body1">
                 <input type="text" id="input-description" value="Исследователь океана" class="popup__input">
+                <div class="popup__input-border"></div>
             </div>
 
         </div>
@@ -26,16 +28,29 @@
 
 <div class="popup__inner popup__inner--add-photo">
 
-    <p class="typography__title typography__extra-bold">Загрузить фото</p>
+    <form action="" class="popup__form-edit-profile" id="form-add-new-place">
+        <p class="typography__title typography__extra-bold">Новое место</p>
 
-    <div class="popup__inputs">
+        <div class="popup__input-group">
 
-        ФОТО
+            <div class="popup__form-input typography__body1" id="input-name-of-new-place-container">
+                <input type="text" id="input-name-of-new-place" class="popup__input" placeholder="Название">
+                <div class="popup__input-error typography__caption">Вы пропустили это поле.</div>
+                <div class="popup__input-border"></div>
+            </div>
 
-    </div>
+            <div class="popup__form-input typography__body1" id="input-link-on-new-place-container">
+                <input type="text" id="input-link-on-new-place" class="popup__input" placeholder="Ссылка на картинку">
+                <div class="popup__input-error typography__caption">Введите адрес сайта.</div>
+                <div class="popup__input-border"></div>
+            </div>
+            
 
-    <button class="button--black-full-width typography__body1">Сохранить</button>
+        </div>
 
-    <div class="button button--close" name="toggle-popup-add-photo"></div>
+        <button class="button--black-full-width typography__body1">Сохранить</button>
+    </form>
+
+    <div class="button button--close" name="toggle-popup-edit-profile"></div>
 
 </div>

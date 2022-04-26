@@ -1,4 +1,10 @@
+input {
+    width: 100%;
+}
+
 .popup-group {
+    z-index: 10;
+
     width: 100%;
     height: 100%;
     background-color: rgba($color: #000000, $alpha: 0.8);
@@ -10,17 +16,17 @@
 
     display: none;
 
-    &--popup_opened{
+    &--popup_opened {
         display: flex;
     }
 }
 
-.popup__inner{
+.popup__inner {
     border-radius: 10px;
     background-color: white;
     color: black;
     position: fixed;
-   
+
     padding: 25px;
 
     width: 90%;
@@ -29,56 +35,78 @@
     max-width: 430px;
     max-height: 330px;
 
-    @include breakpoint($medium){
+    @include breakpoint($medium) {
         padding: 25px 22px;
     }
 }
 
-.popup__inner--edit-profile{
+.popup__inner--edit-profile {
     display: none;
 
-    &--visible{
+    &--visible {
         display: block;
     }
 }
 
-.popup__inner--add-photo{
+.popup__inner--add-photo {
     display: none;
     flex-direction: column;
     justify-content: space-between;
 
-    &--visible{
+    &--visible {
         display: flex;
     }
 }
 
-
-
-.popup__input{
+.popup__input {
     border: 0px;
 }
 
-.popup__form-input{
+.popup__form-input {
     position: relative;
 
-    &::before{
-        content: ' ';
-        width: 100%;
-        height: 1px;
-        background-color: rgba($color: #000000, $alpha: 0.3);
-        position: absolute;
-        bottom: -5px;
+    // &::before{
+    //     content: ' ';
+    //     width: 100%;
+    //     height: 1px;
+    //     background-color: rgba($color: #000000, $alpha: 0.3);
+    //     position: absolute;
+    //     bottom: -5px;
+    // }
+}
+
+.popup__input-border {
+    width: 100%;
+    height: 1px;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    position: absolute;
+    bottom: -5px;
+
+    &--error {
+        background-color: rgba($color: #ff0000, $alpha: 0.3);
     }
 }
 
-.popup__input-group{
+.popup__input-error {
+    position: absolute;
+    color: red;
+
+    bottom: -25px;
+    display: none;
+
+    &--error {
+        display: block;
+    }
+}
+
+.popup__input-group {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 35px;
+    gap: 45px;
 }
 
-.popup__form-edit-profile{
+.popup__form-edit-profile {
     display: flex;
     height: 100%;
     width: 100%;
