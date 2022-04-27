@@ -1,0 +1,8 @@
+.footer__text{
+    color:#545454;
+    margin-bottom: 60px;
+
+    @include breakpoint($medium){
+        margin-bottom: 36px;
+    }
+}

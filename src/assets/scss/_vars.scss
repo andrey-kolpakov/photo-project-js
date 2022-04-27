@@ -1,8 +1,19 @@
-$primary:   #202020;
+$primary: #202020;
 $secondary: #121212;
-$white:     #fff;
+$white: #fff;
 
 $z-index-sidebar: 1000;
-$z-index-header:  1000;
+$z-index-header: 1000;
 
 $sidebar-width: 300px;
+
+// Resolutions vars
+$extra-large: 3000px;   //↓
+
+$large: 992px;          //↓ 
+
+$medium: 768px;         //↓
+
+$small: 576px;          //↓
+
+$extra-small: 375px;    //↓

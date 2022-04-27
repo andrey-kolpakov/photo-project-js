@@ -1,26 +1,27 @@
 <header class="header">
 
-    <div class="container mt45 mb41">
-        <div class="header__logo mb41">
-            <h1 class="typography__h1">Mesto</h1>
-            <p class="typography__sup">Russia</p>
-        </div>
-
-        <hr class="helper__hr mb41">
-
-        <div class="header__menu">
-            <div class="header__menu-left">
-                <div class="avatar" style="background-image: url(/assets/images/avatars/avatar.jpg);"></div>
-
-                <div class="header__name-interface">
-                    <p class="header__name">Жак-Ив Кусто <button class="edit-button"></button class="edit-button"></p>
-                    <p class="header__description">Исследователь океана</p>
-                </div>
-            </div>
-
-            <button class="add-button"></button>
-        </div>
-
+    <div class="header__logo">
+        <h1 class="typography__h1">Mesto</h1>
+        <p class="typography__sup">Russia</p>
     </div>
+
+    <hr class="helper__hr helper__hr--fw-mobile-version">
+
+    <div class="header__menu">
+        <div class="header__menu-left">
+            <div class="avatar" style="background-image: url(/assets/images/avatars/avatar.jpg);"></div>
+
+            <div class="header__name-interface">
+                <p> <span class="header__name" id="user-name">Жак-Ив Кусто </span>
+                    <button class="button--edit" name="toggle-popup-edit-profile"></button>
+                </p>
+                <p class="typography__body1" id="user-description">Исследователь океана</p>
+            </div>
+        </div>
+
+        <div class="button button--add" name="toggle-popup-add-photo"></div>
+    </div>
+
+
 
 </header>

@@ -1,3 +1,12 @@
+.header{
+    margin-top: 45px;
+    margin-bottom: 41px;
+
+    @include breakpoint($medium) {
+        margin:31px 0;
+    }
+}
+
 .header__container {
     max-width: 1200px;
     margin: 0 auto;
@@ -6,6 +15,11 @@
 
 .header__logo {
     display: flex;
+    margin-bottom: 41px;
+
+    @include breakpoint($medium) {
+        margin-bottom: 31px;
+    }
 }
 
 .header__menu {
@@ -13,6 +27,11 @@
 
     align-items: center;
     justify-content: space-between;
+
+    @include breakpoint($medium) {
+        flex-direction: column;
+        gap: 36px;
+    }
 }
 
 .header__menu-left {
@@ -21,6 +40,10 @@
     align-items: center;
 
     gap: 20px;
+
+    @include breakpoint($medium) {
+        flex-direction: column;
+    }
 }
 
 .avatar {
@@ -30,38 +53,22 @@
     height: 120px;
 
     background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.header__name{
+.header__name {
     margin-bottom: 10px;
+
 }
 
-.edit-button {
-    width: 24px;
-    height: 24px;
-
-    border: 1px white solid;
-
-    background-color: rgba($color: #000000, $alpha: 0);
-    
-    background-image: url("/assets/images/pencil--w.svg");
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: center center;
-    margin-left: 10px;
+.header__name-interface {
+    @include breakpoint($medium) {
+        text-align: center;
+    }
 }
-
-.add-button{
-    width: 150px;
-    height: 50px;
-
-    border: 1px white solid;
-    background-color: rgba($color: #000000, $alpha: 0);
-    color: white;
-
-
-    background-image: url("/assets/images/add-button-plus.svg");
-    background-repeat: no-repeat;
-    background-size: 20%;
-    background-position: center 60%;
+.header__name-interface > :first-child {
+    @include breakpoint($medium) {
+        margin-bottom: 10px;
+    }
 }
