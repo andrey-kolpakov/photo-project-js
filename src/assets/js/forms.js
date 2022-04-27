@@ -143,4 +143,4 @@ function validateIsLose(id){
 
 formAddNewPlace.addEventListener('submit', formAddNewPlaceHandler)
 
-
+module.exports = { addNewPhotoPopup };

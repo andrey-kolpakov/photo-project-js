@@ -1,3 +1,5 @@
+import { addNewPhotoPopup } from './forms'
+
 let popupGroup = document.querySelector('.popup-group')
 let toggleEditProfile = document.getElementsByName('toggle-popup-edit-profile')
 let addPhoto = document.getElementsByName('toggle-popup-add-photo')
@@ -12,6 +14,8 @@ function toggleNewPopupInner(name) {
     let newPopup = document.querySelector(name)
     newPopup.classList.toggle(name.slice(1) + '--visible')
 }
+
+console.log('addNewPhotoPopup', addNewPhotoPopup);
 
 toggleEditProfile.forEach(element => {
     element.addEventListener('click', function () {
