@@ -1,36 +1,53 @@
-import { addNewPhotoPopup } from './forms'
+//Поиск группы попапов
+let popupGroup = document.getElementById('popupGroup')
 
-let popupGroup = document.querySelector('.popup-group')
-let toggleEditProfile = document.getElementsByName('toggle-popup-edit-profile')
-let addPhoto = document.getElementsByName('toggle-popup-add-photo')
 
-let userName = document.getElementById('user-name')
-let inputName = document.getElementById('input-name')
-
-let userDescription = document.getElementById('user-description')
-let inputDescription = document.getElementById('input-description')
-
-function toggleNewPopupInner(name) {
-    let newPopup = document.querySelector(name)
-    newPopup.classList.toggle(name.slice(1) + '--visible')
+//Выключение по клику на бэкдроп
+let allPopups = document.querySelectorAll('.popup__inner')
+function closeAllPopups() {
+    popupGroup.classList.toggle('popup-group--popup-opened')
+    allPopups.forEach(popup => {
+        popup.classList.remove('popup__inner--active')
+    })
 }
 
-console.log('addNewPhotoPopup', addNewPhotoPopup);
+let popupCloseButton = document.getElementById('popupCloseButton')
+popupCloseButton.addEventListener('click', function () {
+    closeAllPopups()
+})
 
-toggleEditProfile.forEach(element => {
-    element.addEventListener('click', function () {
-        popupGroup.classList.toggle('popup-group--popup_opened')
-        toggleNewPopupInner('.popup__inner--edit-profile')
 
-        inputName.value = userName.textContent
 
-        inputDescription.value = userDescription.textContent
+//Попап смены имени
+let popupEditProfileToggleButtons = document.getElementsByName('popupEditProfileToggleButton')
+let popupEditProfile = document.getElementById('popupEditProfile')
+
+popupEditProfileToggleButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        popupGroup.classList.toggle('popup-group--popup-opened')
+        popupEditProfile.classList.toggle('popup__inner--active')
     })
 })
 
-addPhoto.forEach(element => {
-    element.addEventListener('click', function () {
-        popupGroup.classList.toggle('popup-group--popup_opened')
-        toggleNewPopupInner('.popup__inner--add-photo')
+
+
+//Попап загрузки фото
+let popupAddPhotoToggleButtons = document.getElementsByName('popupAddPhotoToggleButton')
+let popupAddPhoto = document.getElementById('popupAddPhoto')
+
+popupAddPhotoToggleButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        popupGroup.classList.toggle('popup-group--popup-opened')
+        popupAddPhoto.classList.toggle('popup__inner--active')
     })
-}) 
+})
+
+//Закрытие попапа с фото
+let closePopupActualPhotoButton = document.getElementsByName('popupActualPhotoToggleButton')
+closePopupActualPhotoButton[0].addEventListener('click', function(){
+    closeAllPopups()
+})
+
+module.exports = {
+    closeAllPopups, popupGroup
+}

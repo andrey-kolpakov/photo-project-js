@@ -1,4 +1,4 @@
-<div class="popup__inner popup__inner--edit-profile">
+<div class="popup__inner popup__form-edit-profile" id="popupEditProfile">
 
     <form action="" class="popup__form-edit-profile" id="form-edit-profile">
         <p class="typography__title typography__extra-bold">Редактировать профиль</p>
@@ -20,13 +20,13 @@
         <button class="button--black-full-width typography__body1">Сохранить</button>
     </form>
 
-    <div class="button button--close" name="toggle-popup-edit-profile"></div>
+    <div class="button button--close" name="popupEditProfileToggleButton"></div>
 
 </div>
 
 
 
-<div class="popup__inner popup__inner--add-photo">
+<div class="popup__inner popup__inner--add-photo" id="popupAddPhoto">
 
     <form action="" class="popup__form-edit-profile" id="form-add-new-place">
         <p class="typography__title typography__extra-bold">Новое место</p>
@@ -51,6 +51,14 @@
         <button class="button--black-full-width typography__body1">Сохранить</button>
     </form>
 
-    <div class="button button--close" name="toggle-popup-edit-profile"></div>
+    <div class="button button--close" name="popupAddPhotoToggleButton"></div>
+
+</div>
+
+<div class="popup__inner popup__actual-photo" id="popupActualPhoto">
+
+    <div class="" id="actualImage"></div>
+
+    <div class="button button--close" name="popupActualPhotoToggleButton"></div>
 
 </div>

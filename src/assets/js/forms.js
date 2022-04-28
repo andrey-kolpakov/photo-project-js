@@ -1,3 +1,13 @@
+import { cardRender } from './cards.js'
+
+import { initialCards } from './cards.js'
+
+import { closeAllPopups } from './popup.js'
+
+// const { initialCards } = require("./cards")
+
+
+
 // Edit profile form
 
 let formEditProfile = document.getElementById('form-edit-profile')
@@ -8,7 +18,10 @@ let inputName = document.getElementById('input-name')
 let userDescription = document.getElementById('user-description')
 let inputDescription = document.getElementById('input-description')
 
-let addNewPhotoPopup = document.querySelector('.popup-group')
+document.addEventListener("DOMContentLoaded", function(){
+    inputName.value = userName.textContent
+    inputDescription.value = userDescription.textContent
+});
 
 function formSubmitHandler(evt) {
     evt.preventDefault();
@@ -16,84 +29,13 @@ function formSubmitHandler(evt) {
     userName.textContent = inputName.value
     userDescription.textContent = inputDescription.value
 
-    addNewPhotoPopup.classList.toggle('popup-group--popup_opened')
-    document.querySelector('.popup__inner--edit-profile').classList.toggle('popup__inner--edit-profile--visible')
+    closeAllPopups()
 }
 formEditProfile.addEventListener('submit', formSubmitHandler)
 
 
 
 // New place form
-
-let generalRow = document.getElementById('generalRow')
-
-/* function cardRender(cardName, cardLink, row) {
-    let newCol = document.createElement('div')
-    newCol.classList.add('col-xlg-4', 'col-md-12')
-
-    let newCard = document.createElement('div')
-    newCard.classList.add('card')
-
-    let newImage = document.createElement('div')
-    newImage.classList.add('card__image')
-    newImage.style.backgroundImage = `url('${cardLink}')`;
-
-    let newCardTextWrapper = document.createElement('div')
-    newCardTextWrapper.classList.add('card__text-wrapper')
-
-    let newText = document.createElement('div')
-    newText.classList.add('card__text')
-    newText.textContent = cardName
-
-    let cardLikeButton = document.createElement('button')
-    cardLikeButton.classList.add('card__like-button')
-    cardLikeButton.addEventListener('click', function () {
-        cardLikeButton.classList.toggle('card__like-button--active')
-    })
-
-    newCard.appendChild(newImage)
-    newCard.appendChild(newCardTextWrapper)
-
-    newCardTextWrapper.appendChild(newText)
-    newCardTextWrapper.appendChild(cardLikeButton)
-
-    newCol.appendChild(newCard)
-    row.prepend(newCol)
-} */
-
-function cardRender(card, row) {
-    let newCol = document.createElement('div')
-    newCol.classList.add('col-xlg-4', 'col-md-12')
-
-    let newCard = document.createElement('div')
-    newCard.classList.add('card')
-
-    let newImage = document.createElement('div')
-    newImage.classList.add('card__image')
-    newImage.style.backgroundImage = `url('${card.link}')`;
-
-    let newCardTextWrapper = document.createElement('div')
-    newCardTextWrapper.classList.add('card__text-wrapper')
-
-    let newText = document.createElement('div')
-    newText.classList.add('card__text')
-    newText.textContent = card.name
-
-    let cardLikeButton = document.createElement('button')
-    cardLikeButton.classList.add('card__like-button')
-    cardLikeButton.addEventListener('click', function () {
-        cardLikeButton.classList.toggle('card__like-button--active')
-    })
-
-    newCard.appendChild(newImage)
-    newCard.appendChild(newCardTextWrapper)
-
-    newCardTextWrapper.appendChild(newText)
-    newCardTextWrapper.appendChild(cardLikeButton)
-
-    newCol.appendChild(newCard)
-    row.prepend(newCol)
-}
 
 let formAddNewPlace = document.getElementById('form-add-new-place')
 
@@ -115,12 +57,13 @@ function formAddNewPlaceHandler(evt) {
     if (newPlaceNameInput.value && newPlaceLinkInput.value) {
         
         let newCard = Object.create(NewCard).constructor(newPlaceNameInput.value, newPlaceLinkInput.value)
-        console.log(newCard)
+        initialCards.push(newCard)
 
-        cardRender(newCard, generalRow)
+        cardRender(newCard)
+        closeAllPopups()
 
-        addNewPhotoPopup.classList.remove('popup-group--popup_opened')
-        document.querySelector('.popup__inner--edit-profile').classList.toggle('popup__inner--add-photo--visible')
+        newPlaceNameInput.value = '' 
+        newPlaceLinkInput.value = ''
     } else {
         if(!newPlaceNameInput.value){
             validateIsLose('input-name-of-new-place-container')
@@ -142,5 +85,3 @@ function validateIsLose(id){
 }
 
 formAddNewPlace.addEventListener('submit', formAddNewPlaceHandler)
-
-module.exports = { addNewPhotoPopup };
