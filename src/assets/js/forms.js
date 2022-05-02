@@ -1,10 +1,8 @@
 import { cardRender } from './cards.js'
 
-import { initialCards } from './cards.js'
-
 import { closeAllPopups } from './popup.js'
 
-// const { initialCards } = require("./cards")
+const { CreateNewCard } = require("./cards")
 
 
 
@@ -42,24 +40,13 @@ let formAddNewPlace = document.getElementById('form-add-new-place')
 let newPlaceNameInput = document.getElementById('input-name-of-new-place')
 let newPlaceLinkInput = document.getElementById('input-link-on-new-place')
 
-let NewCard = {
-    constructor: function(name, link){
-        this.name = name
-        this.link = link
-
-        return this
-    }
-}
-
 function formAddNewPlaceHandler(evt) {
     evt.preventDefault();
 
     if (newPlaceNameInput.value && newPlaceLinkInput.value) {
-        
-        let newCard = Object.create(NewCard).constructor(newPlaceNameInput.value, newPlaceLinkInput.value)
-        initialCards.push(newCard)
 
-        cardRender(newCard)
+        CreateNewCard(newPlaceNameInput.value, newPlaceLinkInput.value)
+        cardRender(true)
         closeAllPopups()
 
         newPlaceNameInput.value = '' 

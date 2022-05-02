@@ -29,422 +29,420 @@
 
 .col {
     &-12 {
-        width: calc(100%);
+        max-width: calc(100%);
     }
 
     &-11 {
-        width: calc((100% / 12) * 11);
+        max-width: ((100% / 12) * 11);
     }
 
     &-10 {
-        width: calc((100% / 12) * 10);
+        max-width: calc((100% / 12) * 10);
     }
 
     &-9 {
-        width: calc((100% / 12) * 9);
+        max-width: calc((100% / 12) * 9);
     }
 
     &-8 {
-        width: calc((100% / 12) * 8);
+        max-width: calc((100% / 12) * 8);
     }
 
     &-7 {
-        width: calc((100% / 12) * 7);
+        max-width: calc((100% / 12) * 7);
     }
 
     &-6 {
-        width: calc((100% / 12) * 6);
+        max-width: calc((100% / 12) * 6);
     }
 
     &-5 {
-        width: calc((100% / 12) * 5);
+        max-width: calc((100% / 12) * 5);
     }
 
     &-4 {
-        width: calc((100% / 12) * 4);
+        max-width: calc((100% / 12) * 4);
     }
 
     &-3 {
-        width: calc((100% / 12) * 3);
+        max-width: calc((100% / 12) * 3);
     }
 
     &-2 {
-        width: calc((100% / 12) * 2);
+        max-width: calc((100% / 12) * 2);
     }
 
     &-1 {
-        width: calc((100% / 12) * 1);
+        max-width: calc((100% / 12) * 1);
     }
-
-    
-
-    &-xlg-12 {
-        @include breakpoint($extra-large) {
-            width: calc((100% / 12) * 12);
-        }
-    }
-
-    &-xlg-11 {
-        @include breakpoint($extra-large) {
-            width: calc((100% / 12) * 11);
-        }
-    }
-
-    &-xlg-10 {
-        @include breakpoint($extra-large) {
-            width: calc((100% / 12) * 10);
-        }
-    }
-
-    &-xlg-9 {
-        @include breakpoint($extra-large) {
-            width: calc((100% / 12) * 9);
-        }
-    }
-
-    &-xlg-8 {
-        @include breakpoint($extra-large) {
-            width: calc((100% / 12) * 8);
-        }
-    }
-
-    &-xlg-7 {
-        @include breakpoint($extra-large) {
-            width: calc((100% / 12) * 7);
-        }
-    }
-
-    &-xlg-6 {
-        @include breakpoint($extra-large) {
-            width: calc((100% / 12) * 6);
-        }
-    }
-
-    &-xlg-5 {
-        @include breakpoint($extra-large) {
-            width: calc((100% / 12) * 5);
-        }
-    }
-
-    &-xlg-4 {
-        @include breakpoint($extra-large) {
-            width: calc((100% / 12) * 4);
-        }
-    }
-
-    &-xlg-3 {
-        @include breakpoint($extra-large) {
-            width: calc((100% / 12) * 3);
-        }
-    }
-
-    &-xlg-2 {
-        @include breakpoint($extra-large) {
-            width: calc((100% / 12) * 2);
-        }
-    }
-
-    &-xlg-1 {
-        @include breakpoint($extra-large) {
-            width: calc((100% / 12) * 1);
-        }
-    }
-
-
-
-
-    &-lg-12 {
-        @include breakpoint($large) {
-            width: calc((100% / 12) * 12);
-        }
-    }
-
-    &-lg-11 {
-        @include breakpoint($large) {
-            width: calc((100% / 12) * 11);
-        }
-    }
-
-    &-lg-10 {
-        @include breakpoint($large) {
-            width: calc((100% / 12) * 10);
-        }
-    }
-
-    &-lg-9 {
-        @include breakpoint($large) {
-            width: calc((100% / 12) * 9);
-        }
-    }
-
-    &-lg-8 {
-        @include breakpoint($large) {
-            width: calc((100% / 12) * 8);
-        }
-    }
-
-    &-lg-7 {
-        @include breakpoint($large) {
-            width: calc((100% / 12) * 7);
-        }
-    }
-
-    &-lg-6 {
-        @include breakpoint($large) {
-            width: calc((100% / 12) * 6);
-        }
-    }
-
-    &-lg-5 {
-        @include breakpoint($large) {
-            width: calc((100% / 12) * 5);
-        }
-    }
-
-    &-lg-4 {
-        @include breakpoint($large) {
-            width: calc((100% / 12) * 4);
-        }
-    }
-
-    &-lg-3 {
-        @include breakpoint($large) {
-            width: calc((100% / 12) * 3);
-        }
-    }
-
-    &-lg-2 {
-        @include breakpoint($large) {
-            width: calc((100% / 12) * 2);
-        }
-    }
-
-    &-lg-1 {
-        @include breakpoint($large) {
-            width: calc((100% / 12) * 1);
-        }
-    }
-
-
-
-    
-    &-md-12 {
-        @include breakpoint($medium) {
-            width: calc((100% / 12) * 12);
-        }
-    }
-
-    &-md-11 {
-        @include breakpoint($medium) {
-            width: calc((100% / 12) * 11);
-        }
-    }
-
-    &-md-10 {
-        @include breakpoint($medium) {
-            width: calc((100% / 12) * 10);
-        }
-    }
-
-    &-md-9 {
-        @include breakpoint($medium) {
-            width: calc((100% / 12) * 9);
-        }
-    }
-
-    &-md-8 {
-        @include breakpoint($medium) {
-            width: calc((100% / 12) * 8);
-        }
-    }
-
-    &-md-7 {
-        @include breakpoint($medium) {
-            width: calc((100% / 12) * 7);
-        }
-    }
-
-    &-md-6 {
-        @include breakpoint($medium) {
-            width: calc((100% / 12) * 6);
-        }
-    }
-
-    &-md-5 {
-        @include breakpoint($medium) {
-            width: calc((100% / 12) * 5);
-        }
-    }
-
-    &-md-4 {
-        @include breakpoint($medium) {
-            width: calc((100% / 12) * 4);
-        }
-    }
-
-    &-md-3 {
-        @include breakpoint($medium) {
-            width: calc((100% / 12) * 3);
-        }
-    }
-
-    &-md-2 {
-        @include breakpoint($medium) {
-            width: calc((100% / 12) * 2);
-        }
-    }
-
-    &-md-1 {
-        @include breakpoint($medium) {
-            width: calc((100% / 12) * 1);
-        }
-    }
-
-
-
-    &-sm-12 {
-        @include breakpoint($small) {
-            width: calc((100% / 12) * 12);
-        }
-    }
-
-    &-sm-11 {
-        @include breakpoint($small) {
-            width: calc((100% / 12) * 11);
-        }
-    }
-
-    &-sm-10 {
-        @include breakpoint($small) {
-            width: calc((100% / 12) * 10);
-        }
-    }
-
-    &-sm-9 {
-        @include breakpoint($small) {
-            width: calc((100% / 12) * 9);
-        }
-    }
-
-    &-sm-8 {
-        @include breakpoint($small) {
-            width: calc((100% / 12) * 8);
-        }
-    }
-
-    &-sm-7 {
-        @include breakpoint($small) {
-            width: calc((100% / 12) * 7);
-        }
-    }
-
-    &-sm-6 {
-        @include breakpoint($small) {
-            width: calc((100% / 12) * 6);
-        }
-    }
-
-    &-sm-5 {
-        @include breakpoint($small) {
-            width: calc((100% / 12) * 5);
-        }
-    }
-
-    &-sm-4 {
-        @include breakpoint($small) {
-            width: calc((100% / 12) * 4);
-        }
-    }
-
-    &-sm-3 {
-        @include breakpoint($small) {
-            width: calc((100% / 12) * 3);
-        }
-    }
-
-    &-sm-2 {
-        @include breakpoint($small) {
-            width: calc((100% / 12) * 2);
-        }
-    }
-
-    &-sm-1 {
-        @include breakpoint($small) {
-            width: calc((100% / 12) * 1);
-        }
-    }
-
-
 
     &-xsm-12 {
-        @include breakpoint($extra-small) {
-            width: calc((100% / 12) * 12);
+        @include breakpoint-flex($extra-small) {
+            max-width: calc((100% / 12) * 12);
         }
     }
 
     &-xsm-11 {
-        @include breakpoint($extra-small) {
-            width: calc((100% / 12) * 11);
+        @include breakpoint-flex($extra-small) {
+            max-width: calc((100% / 12) * 11);
         }
     }
 
     &-xsm-10 {
-        @include breakpoint($extra-small) {
-            width: calc((100% / 12) * 10);
+        @include breakpoint-flex($extra-small) {
+            max-width: calc((100% / 12) * 10);
         }
     }
 
     &-xsm-9 {
-        @include breakpoint($extra-small) {
-            width: calc((100% / 12) * 9);
+        @include breakpoint-flex($extra-small) {
+            max-width: calc((100% / 12) * 9);
         }
     }
 
     &-xsm-8 {
-        @include breakpoint($extra-small) {
-            width: calc((100% / 12) * 8);
+        @include breakpoint-flex($extra-small) {
+            max-width: calc((100% / 12) * 8);
         }
     }
 
     &-xsm-7 {
-        @include breakpoint($extra-small) {
-            width: calc((100% / 12) * 7);
+        @include breakpoint-flex($extra-small) {
+            max-width: calc((100% / 12) * 7);
         }
     }
 
     &-xsm-6 {
-        @include breakpoint($extra-small) {
-            width: calc((100% / 12) * 6);
+        @include breakpoint-flex($extra-small) {
+            max-width: calc((100% / 12) * 6);
         }
     }
 
     &-xsm-5 {
-        @include breakpoint($extra-small) {
-            width: calc((100% / 12) * 5);
+        @include breakpoint-flex($extra-small) {
+            max-width: calc((100% / 12) * 5);
         }
     }
 
     &-xsm-4 {
-        @include breakpoint($extra-small) {
-            width: calc((100% / 12) * 4);
+        @include breakpoint-flex($extra-small) {
+            max-width: calc((100% / 12) * 4);
         }
     }
 
     &-xsm-3 {
-        @include breakpoint($extra-small) {
-            width: calc((100% / 12) * 3);
+        @include breakpoint-flex($extra-small) {
+            max-width: calc((100% / 12) * 3);
         }
     }
 
     &-xsm-2 {
-        @include breakpoint($extra-small) {
-            width: calc((100% / 12) * 2);
+        @include breakpoint-flex($extra-small) {
+            max-width: calc((100% / 12) * 2);
         }
     }
 
     &-xsm-1 {
-        @include breakpoint($extra-small) {
-            width: calc((100% / 12) * 1);
+        @include breakpoint-flex($extra-small) {
+            max-width: calc((100% / 12) * 1);
         }
     }
+
+    &-sm-12 {
+        @include breakpoint-flex($small) {
+            max-width: calc((100% / 12) * 12);
+        }
+    }
+
+    &-sm-11 {
+        @include breakpoint-flex($small) {
+            max-width: calc((100% / 12) * 11);
+        }
+    }
+
+    &-sm-10 {
+        @include breakpoint-flex($small) {
+            max-width: calc((100% / 12) * 10);
+        }
+    }
+
+    &-sm-9 {
+        @include breakpoint-flex($small) {
+            max-width: calc((100% / 12) * 9);
+        }
+    }
+
+    &-sm-8 {
+        @include breakpoint-flex($small) {
+            max-width: calc((100% / 12) * 8);
+        }
+    }
+
+    &-sm-7 {
+        @include breakpoint-flex($small) {
+            max-width: calc((100% / 12) * 7);
+        }
+    }
+
+    &-sm-6 {
+        @include breakpoint-flex($small) {
+            max-width: calc((100% / 12) * 6);
+        }
+    }
+
+    &-sm-5 {
+        @include breakpoint-flex($small) {
+            max-width: calc((100% / 12) * 5);
+        }
+    }
+
+    &-sm-4 {
+        @include breakpoint-flex($small) {
+            max-width: calc((100% / 12) * 4);
+        }
+    }
+
+    &-sm-3 {
+        @include breakpoint-flex($small) {
+            max-width: calc((100% / 12) * 3);
+        }
+    }
+
+    &-sm-2 {
+        @include breakpoint-flex($small) {
+            max-width: calc((100% / 12) * 2);
+        }
+    }
+
+    &-sm-1 {
+        @include breakpoint-flex($small) {
+            max-width: calc((100% / 12) * 1);
+        }
+    }
+
+    &-md-12 {
+        @include breakpoint-flex($medium) {
+            max-width: calc((100% / 12) * 12);
+        }
+    }
+
+    &-md-11 {
+        @include breakpoint-flex($medium) {
+            max-width: calc((100% / 12) * 11);
+        }
+    }
+
+    &-md-10 {
+        @include breakpoint-flex($medium) {
+            max-width: calc((100% / 12) * 10);
+        }
+    }
+
+    &-md-9 {
+        @include breakpoint-flex($medium) {
+            max-width: calc((100% / 12) * 9);
+        }
+    }
+
+    &-md-8 {
+        @include breakpoint-flex($medium) {
+            max-width: calc((100% / 12) * 8);
+        }
+    }
+
+    &-md-7 {
+        @include breakpoint-flex($medium) {
+            max-width: calc((100% / 12) * 7);
+        }
+    }
+
+    &-md-6 {
+        @include breakpoint-flex($medium) {
+            max-width: calc((100% / 12) * 6);
+        }
+    }
+
+    &-md-5 {
+        @include breakpoint-flex($medium) {
+            max-width: calc((100% / 12) * 5);
+        }
+    }
+
+    &-md-4 {
+        @include breakpoint-flex($medium) {
+            max-width: calc((100% / 12) * 4);
+        }
+    }
+
+    &-md-3 {
+        @include breakpoint-flex($medium) {
+            max-width: calc((100% / 12) * 3);
+        }
+    }
+
+    &-md-2 {
+        @include breakpoint-flex($medium) {
+            max-width: calc((100% / 12) * 2);
+        }
+    }
+
+    &-md-1 {
+        @include breakpoint-flex($medium) {
+            max-width: calc((100% / 12) * 1);
+        }
+    }
+
+    &-lg-12 {
+        @include breakpoint-flex($large) {
+            max-width: calc((100% / 12) * 12);
+        }
+    }
+
+    &-lg-11 {
+        @include breakpoint-flex($large) {
+            max-width: calc((100% / 12) * 11);
+        }
+    }
+
+    &-lg-10 {
+        @include breakpoint-flex($large) {
+            max-width: calc((100% / 12) * 10);
+        }
+    }
+
+    &-lg-9 {
+        @include breakpoint-flex($large) {
+            max-width: calc((100% / 12) * 9);
+        }
+    }
+
+    &-lg-8 {
+        @include breakpoint-flex($large) {
+            max-width: calc((100% / 12) * 8);
+        }
+    }
+
+    &-lg-7 {
+        @include breakpoint-flex($large) {
+            max-width: calc((100% / 12) * 7);
+        }
+    }
+
+    &-lg-6 {
+        @include breakpoint-flex($large) {
+            max-width: calc((100% / 12) * 6);
+        }
+    }
+
+    &-lg-5 {
+        @include breakpoint-flex($large) {
+            max-width: calc((100% / 12) * 5);
+        }
+    }
+
+    &-lg-4 {
+        @include breakpoint-flex($large) {
+            max-width: calc((100% / 12) * 4);
+        }
+    }
+
+    &-lg-3 {
+        @include breakpoint-flex($large) {
+            max-width: calc((100% / 12) * 3);
+        }
+    }
+
+    &-lg-2 {
+        @include breakpoint-flex($large) {
+            max-width: calc((100% / 12) * 2);
+        }
+    }
+
+    &-lg-1 {
+        @include breakpoint-flex($large) {
+            max-width: calc((100% / 12) * 1);
+        }
+    }
+
+
+
+    &-xl-12 {
+        @include breakpoint-flex($extra-large) {
+            max-width: calc((100% / 12) * 12);
+        }
+    }
+
+    &-xl-11 {
+        @include breakpoint-flex($extra-large) {
+            max-width: calc((100% / 12) * 11);
+        }
+    }
+
+    &-xl-10 {
+        @include breakpoint-flex($extra-large) {
+            max-width: calc((100% / 12) * 10);
+        }
+    }
+
+    &-xl-9 {
+        @include breakpoint-flex($extra-large) {
+            max-width: calc((100% / 12) * 9);
+        }
+    }
+
+    &-xl-8 {
+        @include breakpoint-flex($extra-large) {
+            max-width: calc((100% / 12) * 8);
+        }
+    }
+
+    &-xl-7 {
+        @include breakpoint-flex($extra-large) {
+            max-width: calc((100% / 12) * 7);
+        }
+    }
+
+    &-xl-6 {
+        @include breakpoint-flex($extra-large) {
+            max-width: calc((100% / 12) * 6);
+        }
+    }
+
+    &-xl-5 {
+        @include breakpoint-flex($extra-large) {
+            max-width: calc((100% / 12) * 5);
+        }
+    }
+
+    &-xl-4 {
+        @include breakpoint-flex($extra-large) {
+            max-width: calc((100% / 12) * 4);
+        }
+    }
+
+    &-xl-3 {
+        @include breakpoint-flex($extra-large) {
+            max-width: calc((100% / 12) * 3);
+        }
+    }
+
+    &-xl-2 {
+        @include breakpoint-flex($extra-large) {
+            max-width: calc((100% / 12) * 2);
+        }
+    }
+
+    &-xl-1 {
+        @include breakpoint-flex($extra-large) {
+            max-width: calc((100% / 12) * 1);
+        }
+    }
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
