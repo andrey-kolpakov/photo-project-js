@@ -4,7 +4,7 @@
     gap: 20px;
     margin-bottom: 20px;
 
-    @include breakpoint($medium){
+    @include breakpoint($medium) {
         flex-direction: column;
     }
 }
@@ -23,11 +23,37 @@
 
     overflow: hidden;
 
+    position: relative;
+
     /* max-width: 33%; */
 
-    @include breakpoint($medium){
+    @include breakpoint($medium) {
         height: 400px;
     }
+}
+
+.card__delete {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    background-image: url("/assets/images/bin.png");
+    background-size: contain;
+    background-position: center center;
+
+    opacity: 0%;
+
+    width: 30px;
+    height: 30px;
+
+    transition: all .1s ease-in-out;
+
+    &:hover {
+        opacity: 80%;
+    }
+
+    cursor: pointer;
 }
 
 .card__image {
@@ -36,9 +62,12 @@
 
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
+
+    cursor: pointer;
 }
 
-.card__text-wrapper{
+.card__text-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,13 +95,13 @@
     height: 22px;
 
     border: none;
-    background-color: rgba($color: #000000, $alpha: 0);
+    background-color: $invisible;
 
-    &:hover{
+    &:hover {
         filter: opacity(50%);
     }
 
-    &--active{
+    &--active {
         background-image: url("/assets/images/like--active.svg");
     }
 }

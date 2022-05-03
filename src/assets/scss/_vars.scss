@@ -1,6 +1,12 @@
 $primary: #202020;
 $secondary: #121212;
 $white: #fff;
+$invisible: rgba($color: #000000, $alpha: 0);
+$light-grey: rgb(173, 173, 173);
+$light-red: rgb(175, 110, 110);
+
+$dark-theme-background: #000;
+$light-theme-background: rgb(163, 163, 163);
 
 $z-index-sidebar: 1000;
 $z-index-header: 1000;
@@ -8,12 +14,12 @@ $z-index-header: 1000;
 $sidebar-width: 300px;
 
 // Resolutions vars
-$extra-large: 3000px;   //↓
+$extra-large: 1200px;   //↑
 
-$large: 992px;          //↓ 
+$large: 992px;          //↑ 
 
-$medium: 768px;         //↓
+$medium: 768px;         //↑
 
-$small: 576px;          //↓
+$small: 576px;          //↑
 
-$extra-small: 375px;    //↓
+$extra-small: 375px;    //↑

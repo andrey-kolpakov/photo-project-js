@@ -9,13 +9,15 @@
 
     <div class="page">
         <!-- Popup -->
-        <div class="popup-group">
+        <div class="popup-group" id="popupGroup">
             {{> popup }}
+
+            <div class="popup__backdrop" id="closeAllPopupButton"></div>
         </div>
 
         <!-- Header -->
 
-        <div class="container">{{> header }}</div>
+        <div class="container"> {{> header }} </div>
         
 
         <!-- Main -->

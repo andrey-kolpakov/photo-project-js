@@ -1,3 +1,9 @@
+@mixin breakpoint-flex($width) {
+    @media (min-width: $width) {
+        @content;
+    }
+}
+
 @mixin breakpoint($width) {
     @media (max-width: $width) {
         @content;
