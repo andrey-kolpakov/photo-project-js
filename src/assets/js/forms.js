@@ -85,6 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     function checkInputs() {
+        validating.onLength('input-description-container', 2, 40)
+        validating.onLength('input-name-container', 2, 15)
+
         if (validating.onLength('input-name-container', 2, 15) == false || validating.onLength('input-description-container', 2, 40) == false) {
             buttonUserData.classList.add('button--black-full-width--inactive')
         } else {
@@ -133,9 +136,14 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     function checkInputs() {
-        if (validating.isLink('input-link-on-new-place-container') == false || validating.onLength('input-name-of-new-place-container', 2, 15)) {
+        validating.isLink('input-link-on-new-place-container')
+        validating.onLength('input-name-of-new-place-container', 2, 15)
+
+        if (validating.isLink('input-link-on-new-place-container') == false || validating.onLength('input-name-of-new-place-container', 2, 15) == false) {
+            console.log('NO')
             buttonAddNewPlace.classList.add('button--black-full-width--inactive')
         } else {
+            console.log('yes')
             buttonAddNewPlace.classList.remove('button--black-full-width--inactive')
         }
     }
