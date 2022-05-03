@@ -2,14 +2,20 @@
 let popupGroup = document.getElementById('popupGroup')
 
 
-//Выключение по клику на бэкдроп
+//Выключение по клику на бэкдроп и на ESC
 function closeAllPopups() {
     let allPopups = document.querySelectorAll('.popup__inner')
-    popupGroup.classList.toggle('popup-group--popup-opened')
+    popupGroup.classList.remove('popup-group--popup-opened')
     allPopups.forEach(popup => {
         popup.classList.remove('popup__inner--active')
     })
 }
+
+document.addEventListener('keydown', function (event) {
+    if (event.code == 'Escape') {
+        closeAllPopups()
+    }
+})
 
 let popupCloseButton = document.getElementById('closeAllPopupButton')
 popupCloseButton.addEventListener('click', function () {
