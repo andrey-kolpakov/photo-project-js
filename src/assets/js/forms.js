@@ -4,41 +4,14 @@ import { closeAllPopups } from './popup.js'
 
 const { CreateNewCard } = require("./cards")
 
-let validating = {
+const { validating } = require("./validation.js")
 
-    onLength: function (inputContainerID, neededLengthStartOfRange, neededLengthEndOfRange) {
-        let inputContainer = document.getElementById(inputContainerID)
-        let input = inputContainer.getElementsByTagName('input')[0]
+const { makeAnError } = require("./validation.js")
 
-        if (input.value.length < neededLengthStartOfRange || input.value.length > neededLengthEndOfRange) {
-            makeAnError(true, inputContainerID, `Введите не менее ${neededLengthStartOfRange} символов и не более, чем ${neededLengthEndOfRange} символов!`)
-            // console.log(inputContainerID, ' is not validated')
+const { checkInputsAndBlockButton } = require("./validation.js")
 
-            return false
-        } else {
-            // console.log(inputContainerID, ' is validated')
-            makeAnError(false, inputContainerID)
-            return true
-        }
-    },
-    isLink: function (inputContainerID,) {
-        let inputContainer = document.getElementById(inputContainerID)
-        let input = inputContainer.getElementsByTagName('input')[0]
+const { checkInput } = require("./validation.js")
 
-        let regExpLink = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
-
-        if (!input.value.match(regExpLink)) {
-            makeAnError(true, inputContainerID, `Введите ссылку!`)
-            // console.log('link is not validated')
-            return false
-        } else {
-            makeAnError(false, inputContainerID)
-            // console.log('link is validated')
-            return true
-        }
-
-    }
-}
 
 
 // Edit profile form
@@ -51,6 +24,9 @@ let inputName = document.getElementById('input-name')
 let userDescription = document.getElementById('user-description')
 let inputDescription = document.getElementById('input-description')
 
+let inputNameContainer = document.getElementById('input-name-container')
+let inputDescriptionContainer = document.getElementById('input-description-container')
+
 let buttonUserData = document.getElementById('buttonUserData')
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -58,43 +34,44 @@ document.addEventListener("DOMContentLoaded", function () {
     inputDescription.value = userDescription.textContent
 });
 
-function formSubmitHandler(evt) {
+function formNewNameSubmitHandler(evt) {
     evt.preventDefault();
 
-    let nameIsValidated = validating.onLength('input-description-container', 2, 40)
-    let descriptionIsValidated = validating.onLength('input-name-container', 2, 15)
+    let nameIsValidated = validating.onLength(inputNameContainer, 2, 14)
+    let descriptionIsValidated = validating.onLength(inputDescriptionContainer, 2, 40)
 
     if (nameIsValidated && descriptionIsValidated) {
         userName.textContent = inputName.value
         userDescription.textContent = inputDescription.value
 
-        makeAnError(false, 'input-name-container')
-        makeAnError(false, 'input-description-container')
+        makeAnError(false, inputNameContainer)
+        makeAnError(false, inputDescriptionContainer)
         closeAllPopups()
     }
 }
-formEditProfile.addEventListener('submit', formSubmitHandler)
+
+formEditProfile.addEventListener('submit', formNewNameSubmitHandler)
 
 document.addEventListener("DOMContentLoaded", function () {
-    inputName.addEventListener('input', function () {
-        checkInputs()
+    let inputsOfNewNameForm = [inputName, inputDescription]
+
+    inputsOfNewNameForm.forEach(input => {
+        input.addEventListener('input', function () {
+            checkInputsAndBlockButton(buttonUserData,
+                { inputContainer: inputNameContainer, settings: { typeOfValidation: 'onLength', startOfRange: 2, endOfRange: 15 } },
+                { inputContainer: inputDescriptionContainer, settings: { typeOfValidation: 'onLength', startOfRange: 2, endOfRange: 40 } },
+
+            )
+        })
     })
 
-    inputDescription.addEventListener('input', function () {
-        checkInputs()
-    })
-
-    function checkInputs() {
-        validating.onLength('input-description-container', 2, 40)
-        validating.onLength('input-name-container', 2, 15)
-
-        if (validating.onLength('input-name-container', 2, 15) == false || validating.onLength('input-description-container', 2, 40) == false) {
-            buttonUserData.classList.add('button--black-full-width--inactive')
-        } else {
-            buttonUserData.classList.remove('button--black-full-width--inactive')
-        }
-    }
+    checkInputsAndBlockButton(buttonUserData,
+        { inputContainer: inputDescriptionContainer, settings: { typeOfValidation: 'onLength', startOfRange: 2, endOfRange: 40 } },
+        { inputContainer: inputNameContainer, settings: { typeOfValidation: 'onLength', startOfRange: 2, endOfRange: 15 } }
+    )
 });
+
+
 
 // New place form
 
@@ -103,67 +80,54 @@ let formAddNewPlace = document.getElementById('form-add-new-place')
 let newPlaceNameInput = document.getElementById('input-name-of-new-place')
 let newPlaceLinkInput = document.getElementById('input-link-on-new-place')
 
+let inputNewPlaceNameContainer = document.getElementById('input-name-of-new-place-container')
+let inputNewPlaceLinkContainer = document.getElementById('input-link-on-new-place-container')
+
 let buttonAddNewPlace = document.getElementById('buttonAddNewPlace')
 
 function formAddNewPlaceHandler(evt) {
     evt.preventDefault();
 
-    let linkIsValidated = validating.isLink('input-link-on-new-place-container')
-    let nameIsValidated = validating.onLength('input-name-of-new-place-container', 2, 15)
+    let linkIsValidated = validating.isLink(inputNewPlaceLinkContainer)
+    let nameIsValidated = validating.onLength(inputNewPlaceNameContainer, 2, 15)
 
     if (linkIsValidated && nameIsValidated) {
 
         CreateNewCard(newPlaceNameInput.value, newPlaceLinkInput.value)
         cardRender(true)
-        makeAnError(false, 'input-name-of-new-place-container')
-        makeAnError(false, 'input-link-on-new-place-container')
+        clearThisInput(inputNewPlaceNameContainer, inputNewPlaceLinkContainer)
+        buttonAddNewPlace.classList.add('button--black-full-width--inactive')
         closeAllPopups()
 
-        newPlaceNameInput.value = ''
-        newPlaceLinkInput.value = ''
     } else {
         buttonAddNewPlace.classList.add('button--black-full-width--inactive')
     }
 }
 
+formAddNewPlace.addEventListener('submit', formAddNewPlaceHandler)
+
 document.addEventListener("DOMContentLoaded", function () {
-    newPlaceNameInput.addEventListener('input', function () {
-        checkInputs()
+    let inputsOfNewPlaceForm = [newPlaceNameInput, newPlaceLinkInput]
+
+    inputsOfNewPlaceForm.forEach(input => {
+        input.addEventListener('input', function () {
+            checkInputsAndBlockButton(buttonAddNewPlace,
+                { inputContainer: inputNewPlaceNameContainer, settings: { typeOfValidation: 'onLength', startOfRange: 2, endOfRange: 15 } },
+                { inputContainer: inputNewPlaceLinkContainer, settings: { typeOfValidation: 'isLink' } },
+            )
+        })
     })
-
-    newPlaceLinkInput.addEventListener('input', function () {
-        checkInputs()
-    })
-
-    function checkInputs() {
-        validating.isLink('input-link-on-new-place-container')
-        validating.onLength('input-name-of-new-place-container', 2, 15)
-
-        if (validating.isLink('input-link-on-new-place-container') == false || validating.onLength('input-name-of-new-place-container', 2, 15) == false) {
-            console.log('NO')
-            buttonAddNewPlace.classList.add('button--black-full-width--inactive')
-        } else {
-            console.log('yes')
-            buttonAddNewPlace.classList.remove('button--black-full-width--inactive')
-        }
-    }
 });
 
-function makeAnError(thereIsAnError, idOfInputContainer, textOfError) {
-    let parrent = document.getElementById(idOfInputContainer)
 
-    let errorCaption = parrent.querySelector('.popup__input-error')
-    let errorBorder = parrent.querySelector('.popup__input-border')
 
-    if (thereIsAnError === true) {
-        errorCaption.classList.add('popup__input-error--error')
-        errorBorder.classList.add('popup__input-border--error')
-        errorCaption.textContent = textOfError
-    } else {
-        errorCaption.classList.remove('popup__input-error--error')
-        errorBorder.classList.remove('popup__input-border--error')
+// Очистка инпутов
+function clearThisInput(...inputContainerList) {
+    for (let inputContainer of inputContainerList) {
+        let input = inputContainer.getElementsByTagName('input')[0]
+        input.value = ''
     }
 }
 
-formAddNewPlace.addEventListener('submit', formAddNewPlaceHandler)
+
 

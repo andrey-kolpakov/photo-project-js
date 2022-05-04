@@ -83,6 +83,7 @@
             border: 2px solid $light-grey;
 
             opacity: .7;
+            pointer-events:none;
 
             &:hover {
                 background-color: $invisible;
