@@ -1,3 +1,5 @@
+const { addEventListenerForButtons } = require("./popup.js")
+
 const initialCards = [
     {
         name: 'Архыз',
@@ -30,9 +32,7 @@ const initialCards = [
 //Рендер карточек. Если приходит true, рендерится только последняя новая в дополнение к имеющимся
 function cardRender(newCard = false) {
     let row = document.getElementById('generalRow')
-
     let popupActualPhoto = document.getElementById('popupActualPhoto')
-    let actualImage = document.getElementById('actualImage')
 
     if (newCard) {
         renderOneCard(initialCards[initialCards.length - 1])
@@ -54,13 +54,9 @@ function cardRender(newCard = false) {
         newImage.classList.add('card__image')
         newImage.style.backgroundImage = `url('${card.link}')`;
         newImage.addEventListener('click', function () {
-            popupGroup.classList.toggle('popup-group--popup-opened')
-            popupActualPhoto.classList.toggle('popup__inner--active')
-
             actualImage.src = card.link
             actualImage.setAttribute('width', actualImage.naturalWidth)
             actualImage.setAttribute('height', actualImage.naturalHeight)
-
 
             //Растяжение контейнера пропорционально по размерам картинки с ограничением относительно размера экрана
             let ratioOfImage = actualImage.naturalWidth / actualImage.naturalHeight
@@ -82,7 +78,10 @@ function cardRender(newCard = false) {
                 console.log('Mobile version')
                 console.log('Ratio Of Screen = ', ratioOfScreen)
 
-                let safetyZoneOfWindowWidth = screen.width * 0.9
+                let safetyZoneOfWindowWidth = screen.width * 0.8
+
+                console.log('Безопасная ширина экрана ', safetyZoneOfWindowWidth)
+                console.log(screen.width * 0.9 * ratioOfImage)
 
                 popupActualPhoto.style.maxWidth = safetyZoneOfWindowWidth + 'px'
                 popupActualPhoto.style.maxHeight = safetyZoneOfWindowWidth / ratioOfImage + 'px'
@@ -90,7 +89,7 @@ function cardRender(newCard = false) {
                 //Десктоп
                 console.log('Desktop version')
                 console.log('Ratio Of Screen = ', ratioOfScreen)
-                
+
                 let safetyZoneOfWindowHeight = screen.height * 0.7
 
                 popupActualPhoto.style.maxHeight = safetyZoneOfWindowHeight + 'px'
@@ -131,11 +130,15 @@ function cardRender(newCard = false) {
         newCol.appendChild(newCard)
         newCol.id = card.name
         row.prepend(newCol)
+
+
+        //Слушатель на кнопку картинки
+        addEventListenerForButtons(newImage, popupActualPhoto);
     }
 }
 
-document.addEventListener("DOMContentLoaded", cardRender());
 
+document.addEventListener("DOMContentLoaded", cardRender());
 
 
 //Добавление карточки в массив. Нужно, чтобы добавить карточку из формы доблавления карточек на сайте

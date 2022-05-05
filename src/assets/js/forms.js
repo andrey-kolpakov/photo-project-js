@@ -1,6 +1,6 @@
-import { cardRender } from './cards.js'
+const { cardRender } = require("./cards.js")
 
-import { closeAllPopups } from './popup.js'
+const { closeAllPopups } = require("./popup.js")
 
 const { CreateNewCard } = require("./cards")
 
@@ -9,8 +9,6 @@ const { validating } = require("./validation.js")
 const { makeAnError } = require("./validation.js")
 
 const { checkInputsAndBlockButton } = require("./validation.js")
-
-const { checkInput } = require("./validation.js")
 
 
 
@@ -120,7 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 // Очистка инпутов
 function clearThisInput(...inputContainerList) {
     for (let inputContainer of inputContainerList) {
@@ -130,4 +127,6 @@ function clearThisInput(...inputContainerList) {
 }
 
 
-
+module.exports = {
+    inputName, inputDescription
+}

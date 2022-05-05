@@ -47,7 +47,7 @@ function makeAnError(thereIsAnError, inputContainer, textOfError) {
 
 //Проверки инпутов
 
-function checkInput(params) {
+/* function checkInput(params) {
     let inputContainer = params.inputContainer
     let arrayOfSettings = []
     arrayOfSettings.push(inputContainer)
@@ -86,9 +86,44 @@ function checkInputsAndBlockButton(button, ...inputs) {
         button.classList.remove('button--black-full-width--inactive')
     }
 }
+ */
+
+function checkInputsAndBlockButton(button, ...inputs) {
+    let resultsList = []
+
+    for (let input of inputs) {
+        let inputContainer = input.inputContainer
+        let arrayOfSettings = []
+        arrayOfSettings.push(inputContainer)
+
+        for (let key in input.settings) {
+            if (key !== 'typeOfValidation') {
+                arrayOfSettings.push(input.settings[key])
+            }
+        }
+
+        let result = validating[input.settings.typeOfValidation].apply(this, arrayOfSettings)
+
+        resultsList.push(result)
+    }
+
+    function checkResults(resultsList) {
+        for (let i = 0; i < resultsList.length; i++) {
+            if (resultsList[i] == false) {
+                return true
+            }
+        }
+    }
+
+    if (checkResults(resultsList)) {
+        button.classList.add('button--black-full-width--inactive')
+    } else {
+        button.classList.remove('button--black-full-width--inactive')
+    }
+}
 
 
 
 module.exports = {
-    validating, makeAnError, checkInputsAndBlockButton, checkInput
+    validating, makeAnError, checkInputsAndBlockButton, 
 }
