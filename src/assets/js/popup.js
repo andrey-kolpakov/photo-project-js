@@ -111,10 +111,6 @@ let popupAddPhoto = document.getElementById('popupAddPhoto')
 addEventListenerForButtons(popupAddPhotoToggleButton, popupAddPhoto)
 
 
-//Попап открытия фото
-/* let popupActualPhotoShow = document.querySelectorAll('.card-image')
-let popupActualPhoto = document.getElementById('popupActualPhoto')
-addEventListenerForButtons(popupActualPhotoShow, popupActualPhoto) */
 
 module.exports = {
     closeAllPopups, popupGroup, addEventListenerForButtons
