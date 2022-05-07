@@ -5,19 +5,21 @@
 
         <div class="popup__input-group">
 
-            <div class="popup__form-input typography__body1">
+            <div class="popup__form-input typography__body1" id="input-name-container">
                 <input type="text" id="input-name" value="" class="popup__input">
+                <div id="input-name-error" class="popup__input-error typography__caption"></div>
                 <div class="popup__input-border"></div>
             </div>
 
-            <div class="popup__form-input typography__body1">
+            <div class="popup__form-input typography__body1" id="input-description-container">
                 <input type="text" id="input-description" value="Исследователь океана" class="popup__input">
+                <div id="input-description-error" class="popup__input-error typography__caption"></div>
                 <div class="popup__input-border"></div>
             </div>
 
         </div>
 
-        <button class="button--black-full-width typography__body1">Сохранить</button>
+        <button class="button button--black-full-width typography__body1" id="buttonUserData">Сохранить</button>
     </form>
 
     <div class="button button--close" name="popupEditProfileToggleButton"></div>
@@ -48,7 +50,7 @@
 
         </div>
 
-        <button class="button--black-full-width typography__body1">Сохранить</button>
+        <button class="button button--black-full-width button--black-full-width--inactive typography__body1" id="buttonAddNewPlace">Сохранить</button>
     </form>
 
     <div class="button button--close" name="popupAddPhotoToggleButton"></div>

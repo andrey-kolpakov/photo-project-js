@@ -70,8 +70,24 @@
         color: white;
         background-color: black;
 
+        transition: all .17s ease-in-out;
+
         &:hover {
-            background-color: #3f3f3f;
+            background-color: $dark-grey;
+        }
+
+        &--inactive {
+            background-color: $invisible;
+
+            color: $light-grey;
+            border: 2px solid $light-grey;
+
+            opacity: .7;
+            pointer-events:none;
+
+            &:hover {
+                background-color: $invisible;
+            }
         }
     }
 
