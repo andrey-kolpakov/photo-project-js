@@ -46,48 +46,6 @@ function makeAnError(thereIsAnError, inputContainer, textOfError) {
 
 
 //Проверки инпутов
-
-/* function checkInput(params) {
-    let inputContainer = params.inputContainer
-    let arrayOfSettings = []
-    arrayOfSettings.push(inputContainer)
-
-    for (let key in params.settings) {
-        if (key !== 'typeOfValidation') {
-            arrayOfSettings.push(params.settings[key])
-        }
-    }
-
-    let result = validating[params.settings.typeOfValidation].apply(this, arrayOfSettings)
-
-    return result
-}
-
-function checkInputsAndBlockButton(button, ...inputs) {
-    let resultsList = []
-
-    for (let input of inputs) {
-        let resultOfCheckingInput = checkInput(input)
-
-        resultsList.push(resultOfCheckingInput)
-    }
-
-    function checkResults(resultsList) {
-        for (let i = 0; i < resultsList.length; i++) {
-            if (resultsList[i] == false) {
-                return true
-            }
-        }
-    }
-
-    if (checkResults(resultsList)) {
-        button.classList.add('button--black-full-width--inactive')
-    } else {
-        button.classList.remove('button--black-full-width--inactive')
-    }
-}
- */
-
 function checkInputsAndBlockButton(button, ...inputs) {
     let resultsList = []
 

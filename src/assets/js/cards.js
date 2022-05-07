@@ -24,7 +24,11 @@ const initialCards = [
     {
         name: 'Байкал',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
+    },
+    {
+        name: 'Vertical',
+        link: 'https://picsum.photos/100/900'
+    },
 ];
 
 
@@ -66,6 +70,7 @@ function cardRender(newCard = false) {
             console.clear()
             console.log('Width of screen = ', screen.width)
             console.log('Height of screen = ', screen.height)
+            console.log('Ratio of screen', screen.width / screen.height)
             console.log(' ')
             console.log('Width of image = ', actualImage.naturalWidth)
             console.log('Height of image = ', actualImage.naturalHeight)
@@ -73,27 +78,65 @@ function cardRender(newCard = false) {
             console.log(' ')
 
             //Проверка экрана на соотношение сторон. Если соотношение больше одного - это десктоп (горизонтальный экран), если соотношение меньше одного - это мобилка (вертикальный экран)
-            if (ratioOfScreen < 1) {
-                //Мобилка
-                console.log('Mobile version')
-                console.log('Ratio Of Screen = ', ratioOfScreen)
+            switch (true) {
 
-                let safetyZoneOfWindowWidth = screen.width * 0.8
+                case (ratioOfScreen === 1): {
+                    //Square screen
+                    if (ratioOfImage > 1) {
+                        //Horizontal Image
+                        let safetyZone = 0.8
 
-                console.log('Безопасная ширина экрана ', safetyZoneOfWindowWidth)
-                console.log(screen.width * 0.9 * ratioOfImage)
+                        popupActualPhoto.style.maxHeight = (screen.height * safetyZone) / ratioOfImage + 'px'
+                        popupActualPhoto.style.maxWidth = (screen.height * safetyZone) + 'px'
+                    } 
+                    
+                    if (ratioOfImage < 1) {
+                        //Vertical Image
+                        let safetyZone = 0.8
 
-                popupActualPhoto.style.maxWidth = safetyZoneOfWindowWidth + 'px'
-                popupActualPhoto.style.maxHeight = safetyZoneOfWindowWidth / ratioOfImage + 'px'
-            } else {
-                //Десктоп
-                console.log('Desktop version')
-                console.log('Ratio Of Screen = ', ratioOfScreen)
+                        popupActualPhoto.style.maxHeight = (screen.height * safetyZone)  + 'px'
+                        popupActualPhoto.style.maxWidth = (screen.height * safetyZone) * ratioOfImage + 'px'
+                    }
+                }; break;
 
-                let safetyZoneOfWindowHeight = screen.height * 0.7
+                case (ratioOfScreen < 1): {
+                    //Mobile
+                    if (ratioOfImage > 1) {
+                        //Horizontal image
+                        let safetyZone = 0.9
 
-                popupActualPhoto.style.maxHeight = safetyZoneOfWindowHeight + 'px'
-                popupActualPhoto.style.maxWidth = safetyZoneOfWindowHeight * ratioOfImage + 'px'
+                        popupActualPhoto.style.maxHeight = (screen.width * safetyZone) / ratioOfImage  + 'px'
+                        popupActualPhoto.style.maxWidth = (screen.width * safetyZone) + 'px'
+                    }
+                    
+                    if(ratioOfImage < 1){
+                        //Vertical image
+                        let safetyZone = 0.8
+
+                        popupActualPhoto.style.maxHeight = (screen.height * safetyZone) * ratioOfImage + 'px'
+                        popupActualPhoto.style.maxWidth = (screen.width * safetyZone) + 'px'
+                    }
+                }; break;
+
+                case (ratioOfScreen > 1): {
+                    //Desktop
+                    if (ratioOfImage > 1) {
+                        //Horizontal image
+                        let safetyZone = 0.5
+
+                        popupActualPhoto.style.maxHeight = (screen.width * safetyZone) / ratioOfImage  + 'px'
+                        popupActualPhoto.style.maxWidth = (screen.width * safetyZone) + 'px'
+                    }
+                    
+                    if(ratioOfImage < 1){
+                        //Vertical image
+                        let safetyZone = 0.7
+
+                        popupActualPhoto.style.maxHeight = (screen.height * safetyZone) + 'px'
+                        popupActualPhoto.style.maxWidth = (screen.height * safetyZone) * ratioOfImage + 'px'
+                    }
+                }; break;
+                
             }
         })
 
